@@ -1,18 +1,16 @@
 package web
 
 import (
-	"fmt"
 	"github.com/p4vlowVl4d/web-panel/model"
-	"log"
 	"net/http"
 )
 
 func CreatePanel(conf model.ServerConfig) Panel {
-	var addr string
-	addr = fmt.Sprintf("%s:%s", conf.Host, conf.Port)
+	//var addr string
+	//addr = fmt.Sprintf("%s:%s", conf.Host, conf.Port)
 	server := http.Server{
-		Addr:              addr,
-		Handler:           nil,
+		Addr:              "127.0.0.1:3030",
+		Handler:           NewRouter(),
 		TLSConfig:         nil,
 		ReadTimeout:       conf.ReadTime,
 		ReadHeaderTimeout: 0,
@@ -30,10 +28,14 @@ type Panel struct {
 	Server http.Server
 }
 
-func (p Panel) StartServer() {
-	log.Fatal(p.Server.ListenAndServe())
+func (p Panel) StartServer() error {
+	err := p.Server.ListenAndServe()
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (p *Panel) SetHandler(h http.Handler) {
-
+	p.Server.Handler = h
 }
