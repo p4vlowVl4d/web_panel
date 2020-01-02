@@ -1,6 +1,7 @@
 package web
 
 import (
+	"database/sql"
 	"fmt"
 	"github.com/p4vlowVl4d/web-panel/model"
 	"net/http"
@@ -17,6 +18,7 @@ func CreatePanel(conf model.ServerConfig) Panel {
 
 type Panel struct {
 	Server http.Server
+	DB     sql.DB
 }
 
 func (p Panel) StartServer() error {

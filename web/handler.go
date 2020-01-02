@@ -3,13 +3,14 @@ package web
 import (
 	"github.com/go-chi/chi"
 	"html/template"
+	"log"
 	"net/http"
 )
 
 func NewRouter() http.Handler {
 	r := chi.NewRouter()
 	r.Get("/", index)
-	r.Get("/login", auth)
+	r.Get("/login", authForm)
 	r.Handle("/assets/*",
 		http.StripPrefix("/assets/",
 			http.FileServer(http.Dir("public/"))))
@@ -18,11 +19,10 @@ func NewRouter() http.Handler {
 
 func index(w http.ResponseWriter, r *http.Request)  {
 	tmpl, _ := template.ParseFiles("resources/view/index.html")
-	tmpl.Execute(w, nil)
-	//fmt.Fprintf(w, "New web Panel.\nYou Ip: %s", r.RemoteAddr)
+	log.Fatal(tmpl.Execute(w, nil))
 }
 
-func auth(w http.ResponseWriter, r *http.Request) {
+func authForm(w http.ResponseWriter, r *http.Request) {
 	tmpl, _ := template.ParseFiles("resources/view/security/login.html")
-	tmpl.Execute(w, nil)
+	log.Fatal(tmpl.Execute(w, nil))
 }

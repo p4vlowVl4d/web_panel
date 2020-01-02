@@ -14,16 +14,16 @@
   version = "v4.0.2"
 
 [[projects]]
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  revision = "72cd26f257d44c1114970e19afddcd812016007e"
+  version = "v1.4.1"
+
+[[projects]]
   name = "github.com/hashicorp/hcl"
   packages = [".","hcl/ast","hcl/parser","hcl/printer","hcl/scanner","hcl/strconv","hcl/token","json/parser","json/scanner","json/token"]
   revision = "8cb6e5b959231cc1119e43259c4a608f9c51a241"
   version = "v1.0.0"
-
-[[projects]]
-  name = "github.com/jmoiron/sqlx"
-  packages = [".","reflectx"]
-  revision = "d161d7a76b5661016ad0b085869f77fd410f3e6a"
-  version = "v1.2.0"
 
 [[projects]]
   name = "github.com/magiconair/properties"
@@ -92,6 +92,12 @@
   version = "v0.3.2"
 
 [[projects]]
+  name = "google.golang.org/appengine"
+  packages = ["cloudsql"]
+  revision = "971852bfffca25b069c31162ae8f247a3dba083b"
+  version = "v1.6.5"
+
+[[projects]]
   name = "gopkg.in/ini.v1"
   packages = ["."]
   revision = "94291fffe2b14f4632ec0e67c1bfecfc1287a168"
@@ -106,6 +112,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "027a7d4a7fe54c8b702ecd0f394b16966f57d25a7f707637909646fc6557c2bc"
+  inputs-digest = "30387f9dae7dfa4e416cf474e17e44c409329f87d09702e4cdc1055b980a21b3"
   solver-name = "gps-cdcl"
   solver-version = 1

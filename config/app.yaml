@@ -3,3 +3,10 @@ server:
   port: '3030'
   readTimeout: 60
   writeTimeout: 60
+
+mysql:
+  host: '127.0.0.1'
+  port: '13306'
+  user: 'root'
+  password: 'secret'
+  dbname: panel

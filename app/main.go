@@ -18,6 +18,11 @@ func init() {
 func main() {
 	log.Print("Starting application...")
 	flag.Parse()
+	runServer()
+	log.Print("Server was running")
+}
+
+func runServer() {
 	log.Print("Parse configurations")
 	config := createServerConfig()
 	app := web.CreatePanel(config)

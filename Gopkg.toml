@@ -24,7 +24,3 @@
 [[constraint]]
   name = "github.com/spf13/viper"
   version = "1.6.1"
-
-[[constraint]]
-  name = "github.com/jmoiron/sqlx"
-  version = "1.2.0"
